@@ -49,7 +49,7 @@ You should get `200 OK` response:
 
 ## Docker Image Optimization
 
-The original image used in the workshop was extremely large (up to 1GB), requiring significant time to build and upload it to the registry. Therefore Dockerfile was updated and optmizied according to the best practices. 
+The [original image](https://gallery.ecr.aws/y7c9e1d2/joozero-repo) used in the workshop was extremely large (up to 1GB), requiring significant time to build and upload it to the registry. Therefore Dockerfile was updated and optmizied according to the best practices. 
 
 As a reminder, the general **Docker optmization best practices** include:
 - Use of slimmer images in size like [nodejs:alpine](https://hub.docker.com/_/node/tags) for a base image
