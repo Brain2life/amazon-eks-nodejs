@@ -74,3 +74,20 @@ curl -I http://localhost:3000/services/all
 ```
 
 you should see `200 OK` response.
+
+### Pusing Image to the DockerHub
+
+1. Create DockerHub repository and login via:
+```bash
+docker login
+```
+2. Tag the image:
+```bash
+docker tag demo-nodejs-backend:latest <your_dockerhub_username>/demo-nodejs-backend:latest
+```
+3. Push the image:
+```bash
+docker push <your_dockerhub_username>/demo-nodejs-backend:latest
+```
+
+Example Docker Image is available at: [makbanov/demo-nodejs-backend](https://hub.docker.com/r/makbanov/demo-nodejs-backend)
