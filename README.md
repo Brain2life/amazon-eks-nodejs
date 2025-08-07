@@ -46,3 +46,31 @@ curl -I https://eks-workshop-img-bucket-339712714478.s3.us-east-1.amazonaws.com/
 You should get `200 OK` response:
 
 ![](./docs/curl_response.png)
+
+## Docker Image Optimization
+
+The original image used in the workshop was extremely large (up to 1GB), requiring significant time to build and upload it to the registry. Therefore Dockerfile was updated and optmizied according to the best practices. 
+
+As a reminder, the general **Docker optmization best practices** include:
+- Use of slimmer images in size like [nodejs:alpine](https://hub.docker.com/_/node/tags) for a base image
+- Use of multi-stage builds
+- Optimize the use of `RUN` directive by combining them into one line via `&&` operator. Each `RUN` directive adds a new layer on top of the existing
+- Avoid using `root`user and create dedicated, unprivileged user and group to run the application
+- Use `.dockerignore` file to prevent unnecessary files from being copied into your image
+
+To test the image locally, first build the image
+```bash
+docker build -t demo-nodejs-backend .
+```
+
+Run the container:
+```bash
+docker run -p 3000:3000 --name test-nodejs-backend demo-nodejs-backend
+```
+
+Open in the browser http://localhost:3000/ link or:
+```bash
+curl -I http://localhost:3000/services/all
+```
+
+you should see `200 OK` response.
