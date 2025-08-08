@@ -2,7 +2,6 @@
 # S3 Bucket for hosting images for the Frontend App with Public Access Enabled
 # https://registry.terraform.io/modules/terraform-aws-modules/s3-bucket/aws/latest
 #####################################################################################
-
 module "s3_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "~> 5.3.1"

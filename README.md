@@ -75,7 +75,7 @@ curl -I http://localhost:3000/services/all
 
 you should see `200 OK` response.
 
-### Pusing Image to the DockerHub
+### Pushing Image to the DockerHub
 
 1. Create DockerHub repository and login via:
 ```bash
